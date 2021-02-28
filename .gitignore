@@ -1,0 +1,11 @@
+# .gitignore
+
+# files
+
+binary_clock.csproj.user
+
+# folders
+
+binary_clock/bin/
+binary_clock/obj/
+.vs/
