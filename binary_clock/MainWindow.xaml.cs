@@ -24,5 +24,69 @@ namespace binary_clock
         {
             InitializeComponent();
         }
+
+        #region moving mouse
+
+        bool isWindowMoving = false;
+        Point initialPosition;
+        Cursor cursor;
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState == Mouse.LeftButton)
+            {
+                isWindowMoving = true;
+                initialPosition = e.GetPosition(this);
+                cursor = Cursor;
+                Cursor = Cursors.Hand;
+            }
+        }
+
+        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (isWindowMoving)
+            {
+                isWindowMoving = false;
+                Cursor = cursor;
+            }
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isWindowMoving)
+            {
+                Vector position = e.GetPosition(this) - initialPosition;
+                Left += position.X;
+                Top += position.Y;
+            }
+        }
+
+        private void Window_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (isWindowMoving)
+            {
+                isWindowMoving = false;
+            }
+        }
+
+        #endregion
+
+        // close window
+        private void buttonExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        // style when mouse is over exit button
+        private void buttonExit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            (sender as Button).Foreground = Brushes.Black;
+        }
+
+        // style when mouse is not over exit button
+        private void buttonExit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as Button).Foreground = Brushes.White;
+        }
     }
 }
