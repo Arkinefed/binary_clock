@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:binary_clock"
         mc:Ignorable="d"
         Title="binary_clock"
-        Icon="resources\clock.png"
+        Icon="resources\clock_black.ico"
         Width="798"
         Height="472"
         WindowStyle="None"
