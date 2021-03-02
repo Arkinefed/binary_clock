@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>clock_black.ico</ApplicationIcon>
+    <ApplicationIcon>resources/clock_black.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -126,9 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resources\clock_black.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="clock_black.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
