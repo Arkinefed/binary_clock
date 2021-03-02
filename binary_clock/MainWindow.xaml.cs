@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace binary_clock
 {
@@ -20,9 +21,71 @@ namespace binary_clock
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Timer timer;
+        Brush inactiveSegmentColor = new SolidColorBrush(Color.FromRgb(224, 224, 224));
+        Brush activeSegmentColor = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // timer updating UI
+            timer = new Timer(1);
+            timer.Elapsed += UpdateUI;
+            timer.Start();
+        }
+
+        // update UI method
+        private void UpdateUI(object s, ElapsedEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                // data
+                DateTime time = DateTime.Now;
+                int[] digits = new int[6];
+                List<List<Rectangle>> segments = new List<List<Rectangle>>();
+
+                segments.Add(new List<Rectangle>() { h03, h02 });
+                segments.Add(new List<Rectangle>() { h13, h12, h11, h10 });
+                segments.Add(new List<Rectangle>() { m03, m02, m01 });
+                segments.Add(new List<Rectangle>() { m13, m12, m11, m10 });
+                segments.Add(new List<Rectangle>() { s03, s02, s01 });
+                segments.Add(new List<Rectangle>() { s13, s12, s11, s10 });
+
+                digits[0] = time.Hour / 10;
+                digits[1] = time.Hour % 10;
+                digits[2] = time.Minute / 10;
+                digits[3] = time.Minute % 10;
+                digits[4] = time.Second / 10;
+                digits[5] = time.Second % 10;
+
+                // reset UI
+                foreach (List<Rectangle> lr in segments)
+                {
+                    foreach (Rectangle r in lr)
+                    {
+                        r.Fill = inactiveSegmentColor;
+                    }
+                }
+
+                // update UI
+                for (int i = 0; i < 6; i++)
+                {
+                    int value = digits[i];
+                    int index = 0;
+
+                    while (value > 0)
+                    {
+                        if (value % 2 == 1)
+                        {
+                            segments[i][index].Fill = activeSegmentColor;
+                        }
+
+                        value /= 2;
+                        index++;
+                    }
+                }
+            });
         }
 
         #region moving mouse
@@ -74,6 +137,7 @@ namespace binary_clock
         // close window
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
+            timer.Stop();
             this.Close();
         }
 
