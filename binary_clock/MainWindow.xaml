@@ -15,6 +15,23 @@
         MouseUp="Window_MouseUp"
         MouseMove="Window_MouseMove"
         MouseLeave="Window_MouseLeave">
+
+    <Window.Resources>
+        <Style TargetType="Border"
+               x:Key="DisplayBorder">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="Background" Value="#484848" />
+        </Style>
+
+        <Style TargetType="Rectangle"
+               x:Key="BorderRectangle">
+            <Setter Property="Width" Value="70" />
+            <Setter Property="Height" Value="70" />
+            <Setter Property="Fill" Value="#e0e0e0" />
+        </Style>
+    </Window.Resources>
+    
     <Border BorderThickness="1"
             BorderBrush="White">
         <Grid x:Name="mainGrid"
@@ -60,63 +77,39 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h02"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="0"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h03"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="0"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h10"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h11"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h12"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="h13"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
             </Grid>
             <Grid Grid.Column="1"
@@ -134,73 +127,45 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0"
                         Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m01"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="0"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m02"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="0"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m03"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="0"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m10"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m11"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m12"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="m13"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
             </Grid>
             <Grid Grid.Column="2"
@@ -218,73 +183,45 @@
                 </Grid.RowDefinitions>
                 <Border Grid.Column="0"
                         Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s01"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="0"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s02"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="0"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s03"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="0"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s10"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s11"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s12"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
                 <Border Grid.Column="1"
                         Grid.Row="3"
-                        BorderThickness="1"
-                        BorderBrush="White"
-                        Background="#484848">
+                        Style="{StaticResource DisplayBorder}">
                     <Rectangle x:Name="s13"
-                               Width="70"
-                               Height="70"
-                               Fill="#e0e0e0" />
+                               Style="{StaticResource BorderRectangle}" />
                 </Border>
             </Grid>
         </Grid>
