@@ -107,18 +107,33 @@ namespace binary_clock {
         #endregion
 
         // close window
-        private void buttonExit_Click(object sender, RoutedEventArgs e) {
+        private void ButtonExit_Click(object sender, RoutedEventArgs e) {
             timer.Stop();
             Close();
         }
 
         // style when mouse is over exit button
-        private void buttonExit_MouseEnter(object sender, MouseEventArgs e) {
+        private void ButtonExit_MouseEnter(object sender, MouseEventArgs e) {
             (sender as Button).Foreground = Brushes.Black;
         }
 
         // style when mouse is not over exit button
-        private void buttonExit_MouseLeave(object sender, MouseEventArgs e) {
+        private void ButtonExit_MouseLeave(object sender, MouseEventArgs e) {
+            (sender as Button).Foreground = Brushes.White;
+        }
+
+        // minimize window
+        private void ButtonMinimize_Click(object sender, RoutedEventArgs e) {
+            WindowState = WindowState.Minimized;
+        }
+
+        // style when mouse is over minimize button
+        private void ButtonMinimize_MouseEnter(object sender, MouseEventArgs e) {
+            (sender as Button).Foreground = Brushes.Black;
+        }
+
+        // style when mouse is not over minimize button
+        private void ButtonMinimize_MouseLeave(object sender, MouseEventArgs e) {
             (sender as Button).Foreground = Brushes.White;
         }
     }
