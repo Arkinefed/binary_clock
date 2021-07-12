@@ -31,17 +31,16 @@
             <Setter Property="Fill" Value="#e0e0e0" />
         </Style>
     </Window.Resources>
-    
-    <Border BorderThickness="1"
-            BorderBrush="White">
-        <Grid x:Name="mainGrid"
+
+    <Border Style="{StaticResource DisplayBorder}">
+        <Grid x:Name="MainGrid"
               Background="#212121">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="labelTitle"
+            <Label x:Name="LabelTitle"
                    Grid.Column="0"
                    Height="30"
                    VerticalAlignment="Top"
@@ -49,19 +48,35 @@
                    Foreground="White"
                    FontSize="15"
                    Content="binary__clock" />
-            <Button x:Name="buttonExit"
+            <Button x:Name="ButtonMinimize"
+                    Grid.Column="2"
+                    Width="30"
+                    Height="30"
+                    Margin="0,0,30,0"
+                    Background="LightSeaGreen"
+                    Foreground="White"
+                    BorderBrush="White"
+                    FontSize="15"
+                    Content="_"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="ButtonMinimize_Click"
+                    MouseEnter="ButtonMinimize_MouseEnter"
+                    MouseLeave="ButtonMinimize_MouseLeave" />
+            <Button x:Name="ButtonExit"
                     Grid.Column="2"
                     Width="30"
                     Height="30"
                     Background="Crimson"
                     Foreground="White"
+                    BorderBrush="White"
                     FontSize="15"
                     Content="X"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
-                    Click="buttonExit_Click"
-                    MouseEnter="buttonExit_MouseEnter"
-                    MouseLeave="buttonExit_MouseLeave" />
+                    Click="ButtonExit_Click"
+                    MouseEnter="ButtonExit_MouseEnter"
+                    MouseLeave="ButtonExit_MouseLeave" />
             <Grid Grid.Column="0"
                   x:Name="hours"
                   Margin="30">
